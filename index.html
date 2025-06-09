@@ -3,69 +3,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packably – Lightweight Foldable Backpacks</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     body {
       font-family: Arial, sans-serif;
       background-color: #f4efe7;
       color: #333;
     }
-    header {
+    .slider {
       position: relative;
+      width: 100vw;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
     }
-    .banner {
+    .slide {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
-    }
-    .banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
+      background-size: cover;
+      background-position: center;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-    .banner img.active {
+    .slide.active {
       opacity: 1;
     }
-    .logo-overlay {
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      padding: 1rem;
-      margin-bottom: 1rem;
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+      z-index: 2;
     }
-    .logo-overlay img {
-      width: 100px;
-      height: auto;
+    header img {
+      width: 120px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      padding: 0.5rem;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      text-shadow: 1px 1px 2px #000;
     }
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 2px #000;
     }
     .section {
       padding: 2rem 1.5rem;
@@ -81,12 +80,25 @@
       padding: 0;
     }
     .section ul li {
-      margin-bottom: 0.8rem;
-      font-size: 1.1em;
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
     }
-    .section ul li i {
-      margin-right: 0.5rem;
-      color: #333;
+    .section ul li::before {
+      margin-right: 0.6rem;
+      font-family: Arial, sans-serif;
+    }
+    .section ul li:nth-child(1)::before {
+      content: "⚒";
+    }
+    .section ul li:nth-child(2)::before {
+      content: "Ὂ7";
+    }
+    .section ul li:nth-child(3)::before {
+      content: "♫";
+    }
+    .section ul li:nth-child(4)::before {
+      content: "⚙";
     }
     .gallery img {
       max-width: 100%;
@@ -103,24 +115,22 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="banner">
-      <img src="packably_beach.jpg" class="active" />
-      <img src="packably_campsite.jpg" />
-      <img src="packably_festival.jpg" />
-      <img src="packably_festival_closeup.jpg" />
-    </div>
-    <div class="logo-overlay">
+  <div class="slider">
+    <div class="slide active" style="background-image: url('packably_campsite.jpg');"></div>
+    <div class="slide" style="background-image: url('packably_beach.jpg');"></div>
+    <div class="slide" style="background-image: url('packably_festival.jpg');"></div>
+    <div class="slide" style="background-image: url('packably_festival_closeup.jpg');"></div>
+    <header>
       <img src="logo (2).png" alt="Packably Logo" />
-    </div>
-    <h1>Packably</h1>
-    <p>Foldable. Lightweight. Ready for anything.</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#product">Product</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>  <section class="section" id="about">
+      <h1>Packably</h1>
+      <p>Foldable. Lightweight. Ready for anything.</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#product">Product</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  </div>  <section class="section" id="about">
     <h2>About Packably</h2>
     <p>
       Packably creates stylish, lightweight backpacks built for travel, festivals, day trips, and everyday life. Our bags are compact, durable, and fold down neatly when not in use — perfect for those who pack light and move fast.
@@ -128,10 +138,10 @@
   </section>  <section class="section" id="product">
     <h2>Our Flagship Bag</h2>
     <ul>
-      <li><i class="fa-solid fa-compress"></i>Folds into itself for easy packing</li>
-      <li><i class="fa-solid fa-droplet"></i>Water-resistant and lightweight material</li>
-      <li><i class="fa-solid fa-music"></i>Perfect for festivals, travel, and everyday use</li>
-      <li><i class="fa-solid fa-screwdriver-wrench"></i>Durable construction for long-term use</li>
+      <li>Folds into itself for easy packing</li>
+      <li>Water-resistant and lightweight material</li>
+      <li>Perfect for festivals, travel, and everyday use</li>
+      <li>Durable construction for long-term use</li>
     </ul>
   </section>  <section class="section">
     <h2>Out and About with Packably</h2>
@@ -139,7 +149,6 @@
       <img src="packably_campsite.jpg" alt="Packably at a campsite" />
       <img src="packably_beach.jpg" alt="Packably on the beach" />
       <img src="packably_festival.jpg" alt="Packably at a festival" />
-      <img src="packably_festival_closeup.jpg" alt="Packably at a festival close up" />
     </div>
   </section>  <section class="section" id="contact">
     <h2>Contact Us</h2>
@@ -147,13 +156,12 @@
   </section>  <footer>
     © 2025 Packably. All rights reserved.
   </footer>  <script>
-    const slides = document.querySelectorAll('.banner img');
-    let current = 0;
-
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
     setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 5000);
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 4000);
   </script></body>
 </html>
