@@ -1,150 +1,180 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Packably – Lightweight Foldable Backpacks</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4efe7;
       color: #333;
-    }.banner {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
+    }
 
-.banner img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: fade 24s infinite;
-  opacity: 0;
-}
+    .banner {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
 
-.banner img:nth-child(1) { animation-delay: 0s; }
-.banner img:nth-child(2) { animation-delay: 6s; }
-.banner img:nth-child(3) { animation-delay: 12s; }
-.banner img:nth-child(4) { animation-delay: 18s; }
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      animation: fadeBanner 24s infinite;
+      transition: transform 0.6s ease;
+    }
 
-@keyframes fade {
-  0% { opacity: 0; }
-  8% { opacity: 1; }
-  25% { opacity: 1; }
-  33% { opacity: 0; }
-  100% { opacity: 0; }
-}
+    .banner img:hover {
+      transform: scale(1.05);
+    }
 
-.banner-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 5rem 1rem 2rem;
-  color: white;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-}
+    .banner img:nth-child(1) { animation-delay: 0s; }
+    .banner img:nth-child(2) { animation-delay: 6s; }
+    .banner img:nth-child(3) { animation-delay: 12s; }
+    .banner img:nth-child(4) { animation-delay: 18s; }
 
-.banner-content img {
-  width: 140px;
-  margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 0.5rem;
-  border-radius: 12px;
-}
+    @keyframes fadeBanner {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
 
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-}
+    .logo-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
 
-.section {
-  padding: 2rem 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .logo-overlay img {
+      width: 120px;
+      margin-bottom: 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      border-radius: 10px;
+    }
 
-.section h2 {
-  font-size: 1.8em;
-  margin-bottom: 1rem;
-}
+    .logo-overlay p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: rgba(255,255,255,0.6);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+    }
 
-.features {
-  list-style: none;
-  padding: 0;
-}
+    nav {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 1rem 0;
+    }
 
-.features li {
-  margin-bottom: 1rem;
-  font-size: 1.1em;
-}
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.features li i {
-  margin-right: 10px;
-  color: #1a1a1a;
-}
+    .section {
+      padding: 2rem 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.gallery img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-}
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 1rem;
+    }
 
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #666;
-  padding: 2rem 1rem;
-}
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
 
+    .section ul li::before {
+      content: "✔️";
+      margin-right: 0.5rem;
+      color: green;
+    }
+
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      padding: 2rem 1rem;
+    }
   </style>
-</head><body>
-  <header class="banner">
-    <img src="packably_festival_closeup.jpg" alt="Festival Closeup">
-    <img src="packably_beach.jpg" alt="On the beach">
-    <img src="packably_campsite.jpg" alt="At the campsite">
-    <img src="packably_festival.jpg" alt="At the festival"><div class="banner-content">
-  <img src="logo (2).png" alt="Packably Logo">
-  <h1>Packably</h1>
-  <p>Foldable. Lightweight. Ready for anything.</p>
+</head>
+<body>
+
+  <div class="banner">
+    <img src="packably_campsite.jpg" alt="Packably at a campsite" />
+    <img src="packably_beach.jpg" alt="Packably on the beach" />
+    <img src="packably_festival.jpg" alt="Packably at a festival" />
+    <img src="packably_festival_closeup.jpg" alt="Packably festival closeup" />
+
+    <div class="logo-overlay">
+      <img src="logo (2).png" alt="Packably Logo" />
+      <p>Foldable. Lightweight. Ready for anything.</p>
+    </div>
+  </div>
+
   <nav>
     <a href="#about">About</a>
     <a href="#product">Product</a>
     <a href="#contact">Contact</a>
   </nav>
-</div>
 
-  </header>  <section class="section" id="about">
+  <section class="section" id="about">
     <h2>About Packably</h2>
     <p>
       Packably creates stylish, lightweight backpacks built for travel, festivals, day trips, and everyday life. Our bags are compact, durable, and fold down neatly when not in use — perfect for those who pack light and move fast.
     </p>
-  </section>  <section class="section" id="product">
+  </section>
+
+  <section class="section" id="product">
     <h2>Our Flagship Bag</h2>
-    <ul class="features">
-      <li><i class="fas fa-compress-arrows-alt"></i> Folds into itself for easy packing</li>
-      <li><i class="fas fa-tint"></i> Water-resistant and lightweight material</li>
-      <li><i class="fas fa-music"></i> Perfect for festivals, travel, and everyday use</li>
-      <li><i class="fas fa-tools"></i> Durable construction for long-term use</li>
+    <ul>
+      <li>Folds into itself for easy packing</li>
+      <li>Water-resistant and lightweight material</li>
+      <li>Perfect for festivals, travel, and everyday use</li>
+      <li>Durable construction for long-term use</li>
     </ul>
-  </section>  <section class="section">
+  </section>
+
+  <section class="section">
     <h2>Out and About with Packably</h2>
     <div class="gallery">
       <img src="packably_campsite.jpg" alt="Packably at a campsite" />
       <img src="packably_beach.jpg" alt="Packably on the beach" />
       <img src="packably_festival.jpg" alt="Packably at a festival" />
     </div>
-  </section>  <section class="section" id="contact">
+  </section>
+
+  <section class="section" id="contact">
     <h2>Contact Us</h2>
     <p>Got questions? DM us on Instagram <strong>@packably.co</strong> or email <strong>shop.packably@gmail.com</strong></p>
-  </section>  <footer>
+  </section>
+
+  <footer>
     © 2025 Packably. All rights reserved.
   </footer>
+
 </body>
 </html>
