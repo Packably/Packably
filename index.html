@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packably – Lightweight Foldable Backpacks</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -11,92 +11,82 @@
       background-color: #f4efe7;
       color: #333;
     }
-
-    .hero {
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .slideshow-container {
       position: relative;
       height: 100vh;
       overflow: hidden;
     }
-
-    .hero img {
+    .slideshow-image {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      animation: fade 24s infinite;
       opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
-
-    .hero img:nth-child(1) { animation-delay: 0s; }
-    .hero img:nth-child(2) { animation-delay: 6s; }
-    .hero img:nth-child(3) { animation-delay: 12s; }
-    .hero img:nth-child(4) { animation-delay: 18s; }
-
-    @keyframes fade {
-      0% { opacity: 0; }
-      5% { opacity: 1; }
-      25% { opacity: 1; }
-      30% { opacity: 0; }
-      100% { opacity: 0; }
+    .slideshow-image.active {
+      opacity: 1;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    .header-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      color: white;
-      top: 40%;
-      transform: translateY(-50%);
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
     }
-
-    .hero-content h1 {
-      font-size: 3em;
+    .logo {
+      width: 100px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    h1 {
       margin: 0.2em 0;
+      font-size: 2.8em;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
     }
-
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
     }
-
-    .logo {
-      display: block;
-      margin: 1em auto 0 auto;
-      width: 100px;
-    }
-
     .section {
       padding: 2rem 1.5rem;
       max-width: 800px;
       margin: 0 auto;
     }
-
     .section h2 {
       font-size: 1.8em;
       margin-bottom: 1rem;
     }
-
     .section ul {
       list-style: none;
       padding: 0;
     }
-
-    .section ul li::before {
-      content: "✔️";
-      margin-right: 0.5rem;
-      color: green;
+    .section ul li {
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+      font-size: 1.1em;
     }
-
+    .section ul li i {
+      margin-right: 0.6em;
+      color: #333;
+    }
     .gallery img {
       max-width: 100%;
       height: auto;
       margin-bottom: 1rem;
       border-radius: 6px;
     }
-
     footer {
       text-align: center;
       font-size: 0.9em;
@@ -106,59 +96,57 @@
   </style>
 </head>
 <body>
-
-  <div class="hero">
-    <img src="packably_campsite.jpg" alt="Packably at a campsite">
-    <img src="packably_beach.jpg" alt="Packably on the beach">
-    <img src="packably_festival.jpg" alt="Packably at a festival">
-    <img src="packably_festival_closeup.jpg" alt="Packably festival closeup">
-    <div class="hero-content">
-      <h1>Packably</h1>
-      <p>Foldable. Lightweight. Ready for anything.</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#product">Product</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <header>
+    <div class="slideshow-container">
+      <img src="packably_campsite.jpg" class="slideshow-image active" />
+      <img src="packably_beach.jpg" class="slideshow-image" />
+      <img src="packably_festival.jpg" class="slideshow-image" />
+      <img src="packably_festival_closeup.jpg" class="slideshow-image" />
+      <div class="header-content">
+        <img src="logo (2).png" alt="Packably Logo" class="logo" />
+        <h1>Packably</h1>
+        <p>Foldable. Lightweight. Ready for anything.</p>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#product">Product</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </div>
-  </div>
-
-  <img class="logo" src="logo (2).png" alt="Packably Logo" />
-
-  <section class="section" id="about">
+  </header>  <section class="section" id="about">
     <h2>About Packably</h2>
     <p>
       Packably creates stylish, lightweight backpacks built for travel, festivals, day trips, and everyday life. Our bags are compact, durable, and fold down neatly when not in use — perfect for those who pack light and move fast.
     </p>
-  </section>
-
-  <section class="section" id="product">
+  </section>  <section class="section" id="product">
     <h2>Our Flagship Bag</h2>
     <ul>
-      <li>Folds into itself for easy packing</li>
-      <li>Water-resistant and lightweight material</li>
-      <li>Perfect for festivals, travel, and everyday use</li>
-      <li>Durable construction for long-term use</li>
+      <li><i class="fas fa-compress"></i>Folds into itself for easy packing</li>
+      <li><i class="fas fa-tint"></i>Water-resistant and lightweight material</li>
+      <li><i class="fas fa-music"></i>Perfect for festivals, travel, and everyday use</li>
+      <li><i class="fas fa-tools"></i>Durable construction for long-term use</li>
     </ul>
-  </section>
-
-  <section class="section">
+  </section>  <section class="section">
     <h2>Out and About with Packably</h2>
     <div class="gallery">
       <img src="packably_campsite.jpg" alt="Packably at a campsite" />
       <img src="packably_beach.jpg" alt="Packably on the beach" />
       <img src="packably_festival.jpg" alt="Packably at a festival" />
+      <img src="packably_festival_closeup.jpg" alt="Packably at a festival close up" />
     </div>
-  </section>
-
-  <section class="section" id="contact">
+  </section>  <section class="section" id="contact">
     <h2>Contact Us</h2>
     <p>Got questions? DM us on Instagram <strong>@packably.co</strong> or email <strong>shop.packably@gmail.com</strong></p>
-  </section>
-
-  <footer>
+  </section>  <footer>
     © 2025 Packably. All rights reserved.
-  </footer>
+  </footer>  <script>
+    const slides = document.querySelectorAll('.slideshow-image');
+    let index = 0;
 
-</body>
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 3500);
+  </script></body>
 </html>
