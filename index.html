@@ -7,8 +7,8 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f1eb;
+      font-family: Arial, sans-serif;
+      background: #f7f1e8;
       color: #333;
     }
     header {
@@ -18,18 +18,17 @@
       text-align: center;
     }
     header img {
-      max-width: 150px;
-      display: block;
-      margin: 0 auto 1rem;
+      width: 100px;
+      margin-bottom: 1rem;
     }
     nav {
       margin-top: 1rem;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 1rem;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: bold;
     }
     section {
       padding: 2rem;
@@ -37,16 +36,39 @@
       margin: auto;
     }
     h2 {
-      color: #222;
+      color: #1a1a1a;
     }
-    .feature {
-      margin-top: 1rem;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: '✔';
+      margin-right: 0.5rem;
+      color: green;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo (2).png" alt="Packably Logo" /
+    <img src="logo (2).png" alt="Packably Logo">
+    <h1>Packably</h1>
     <p>Foldable. Lightweight. Ready for anything.</p>
     <nav>
       <a href="#about">About</a>
@@ -57,22 +79,35 @@
 
   <section id="about">
     <h2>About Packably</h2>
-    <p>
-      Packably creates stylish, lightweight backpacks built for travel, festivals, day trips, and everyday life.
-      Our bags are compact, durable, and fold down neatly when not in use — perfect for those who pack light and move fast.
-    </p>
+    <p>Packably creates stylish, lightweight backpacks built for travel, festivals, day trips, and everyday life. Our bags are compact, durable, and fold down neatly when not in use — perfect for those who pack light and move fast.</p>
   </section>
 
   <section id="product">
     <h2>Our Flagship Bag</h2>
-    <div class="feature">✔ Folds into itself for easy packing</div>
-    <div class="feature">✔ Water-resistant and lightweight design</div>
-    <div class="feature">✔ Perfect for on-the-go lifestyles</div>
+    <ul>
+      <li>Folds into itself for easy packing</li>
+      <li>Water-resistant and lightweight material</li>
+      <li>Perfect for festivals, travel, and everyday use</li>
+      <li>Durable construction for long-term use</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Out and About with Packably</h2>
+    <div class="gallery">
+      <img src="camping_image.jpg" alt="Packably at a campsite">
+      <img src="beach_image.jpg" alt="Packably on the beach">
+      <img src="festival_image.jpg" alt="Packably at a festival">
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>DM us on Instagram: <strong>@packably.co</strong></p>
+    <h2>Contact Us</h2>
+    <p>Got questions? DM us on Instagram @packably.co or email shop.packably@gmail.com</p>
   </section>
+
+  <footer>
+    &copy; 2025 Packably. All rights reserved.
+  </footer>
 </body>
 </html>
