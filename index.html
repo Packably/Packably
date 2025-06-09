@@ -12,32 +12,27 @@
       color: #333;
     }
 
-    .banner {
+    .hero {
       position: relative;
-      height: 400px;
+      height: 100vh;
       overflow: hidden;
     }
 
-    .banner img {
+    .hero img {
+      position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      position: absolute;
+      animation: fade 24s infinite;
       opacity: 0;
-      animation: fadeBanner 24s infinite;
-      transition: transform 0.6s ease;
     }
 
-    .banner img:hover {
-      transform: scale(1.05);
-    }
+    .hero img:nth-child(1) { animation-delay: 0s; }
+    .hero img:nth-child(2) { animation-delay: 6s; }
+    .hero img:nth-child(3) { animation-delay: 12s; }
+    .hero img:nth-child(4) { animation-delay: 18s; }
 
-    .banner img:nth-child(1) { animation-delay: 0s; }
-    .banner img:nth-child(2) { animation-delay: 6s; }
-    .banner img:nth-child(3) { animation-delay: 12s; }
-    .banner img:nth-child(4) { animation-delay: 18s; }
-
-    @keyframes fadeBanner {
+    @keyframes fade {
       0% { opacity: 0; }
       5% { opacity: 1; }
       25% { opacity: 1; }
@@ -45,36 +40,19 @@
       100% { opacity: 0; }
     }
 
-    .logo-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+    .hero-content {
+      position: relative;
       z-index: 2;
-    }
-
-    .logo-overlay img {
-      width: 120px;
-      margin-bottom: 1rem;
-      background-color: rgba(255, 255, 255, 0.6);
-      padding: 10px;
-      border-radius: 10px;
-    }
-
-    .logo-overlay p {
-      font-size: 1.2rem;
-      font-weight: bold;
-      background-color: rgba(255,255,255,0.6);
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-    }
-
-    nav {
-      background-color: #1a1a1a;
       text-align: center;
-      padding: 1rem 0;
+      color: white;
+      top: 40%;
+      transform: translateY(-50%);
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin: 0.2em 0;
     }
 
     nav a {
@@ -82,6 +60,12 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .logo {
+      display: block;
+      margin: 1em auto 0 auto;
+      width: 100px;
     }
 
     .section {
@@ -123,23 +107,23 @@
 </head>
 <body>
 
-  <div class="banner">
-    <img src="packably_campsite.jpg" alt="Packably at a campsite" />
-    <img src="packably_beach.jpg" alt="Packably on the beach" />
-    <img src="packably_festival.jpg" alt="Packably at a festival" />
-    <img src="packably_festival_closeup.jpg" alt="Packably festival closeup" />
-
-    <div class="logo-overlay">
-      <img src="logo (2).png" alt="Packably Logo" />
+  <div class="hero">
+    <img src="packably_campsite.jpg" alt="Packably at a campsite">
+    <img src="packably_beach.jpg" alt="Packably on the beach">
+    <img src="packably_festival.jpg" alt="Packably at a festival">
+    <img src="packably_festival_closeup.jpg" alt="Packably festival closeup">
+    <div class="hero-content">
+      <h1>Packably</h1>
       <p>Foldable. Lightweight. Ready for anything.</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#product">Product</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#product">Product</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <img class="logo" src="logo (2).png" alt="Packably Logo" />
 
   <section class="section" id="about">
     <h2>About Packably</h2>
