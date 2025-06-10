@@ -4,30 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packably</title>
-
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: system-ui, sans-serif;
       background-color: #fefaf5;
-      color: #333;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
+      color: #2c2c2c;
+      padding: 24px;
+      max-width: 640px;
+      margin: auto;
     }
 
-    .logo {
-      max-width: 250px;
-      height: auto;
+    img.logo {
+      max-width: 240px;
       display: block;
-      margin-bottom: 30px;
+      margin: 0 auto 32px;
     }
 
     h2 {
-      font-size: 28px;
-      margin-top: 30px;
+      font-size: 26px;
+      margin-top: 40px;
+      margin-bottom: 16px;
     }
 
     ul {
@@ -35,30 +31,41 @@
       padding: 0;
     }
 
-    ul li {
+    li {
       margin: 12px 0;
-      font-size: 18px;
+      font-size: 16px;
     }
 
-    ul li i {
+    .feature-icon {
       margin-right: 10px;
-      color: #3a7b7b;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      text-align: center;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo Section -->
-  <img src="packably-logo-transparent.png" alt="Packably Logo" class="logo" />
+  <!-- Logo -->
+  <img src="packably-logo.png" alt="Packably Logo" class="logo" />
 
-  <!-- Features Section -->
+  <!-- Feature Section -->
   <h2>Our Flagship Bag</h2>
   <ul>
-    <li><i class="fas fa-compress-arrows-alt"></i> Folds into itself for easy packing</li>
-    <li><i class="fas fa-tint"></i> Water-resistant and lightweight material</li>
-    <li><i class="fas fa-music"></i> Perfect for festivals, travel, and everyday use</li>
-    <li><i class="fas fa-screwdriver-wrench"></i> Durable construction for long-term use</li>
+    <li><span class="feature-icon">🛠</span> Folds into itself for easy packing</li>
+    <li><span class="feature-icon">^07</span> Water-resistant and lightweight material</li>
+    <li><span class="feature-icon">🎵</span> Perfect for festivals, travel, and everyday use</li>
+    <li><span class="feature-icon">⚙️</span> Durable construction for long-term use</li>
   </ul>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Packably. All rights reserved.
+  </footer>
 
 </body>
 </html>
