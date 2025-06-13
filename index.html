@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packably</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: system-ui, sans-serif;
       background-color: #fefaf5;
       color: #2c2c2c;
-      padding: 24px;
       margin: 0;
-    }
-
-    img.logo {
-      max-width: 240px;
-      display: block;
-      margin: 0 auto 24px;
+      padding: 0;
     }
 
     .sticky-logo {
@@ -28,9 +26,31 @@
       z-index: 1000;
     }
 
+    .hero {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: none;
+      object-fit: cover;
+    }
+
+    .hero img.active {
+      display: block;
+    }
+
+    .content {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
     h2 {
       font-size: 24px;
-      margin-top: 40px;
+      margin-top: 0;
       margin-bottom: 16px;
       text-align: center;
     }
@@ -38,35 +58,20 @@
     ul {
       padding: 0;
       list-style: none;
-      max-width: 600px;
-      margin: 0 auto 40px;
     }
 
     li {
       margin: 12px 0;
       font-size: 16px;
+      display: flex;
+      align-items: center;
     }
 
     .feature-icon {
-      margin-right: 10px;
-    }
-
-    .gallery {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .gallery h3 {
-      font-size: 22px;
-      margin-top: 40px;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 24px;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
     }
 
     footer {
@@ -79,30 +84,41 @@
 </head>
 <body>
 
-  <!-- Sticky Badge Logo Centered -->
+  <!-- Sticky Logo -->
   <img src="packably-sticky-badge.png" alt="Packably Badge Logo" class="sticky-logo" />
 
-  <!-- Feature Section -->
-  <h2>Our Flagship Bag</h2>
-  <ul>
-    <li><span class="feature-icon">🛠</span> Folds into itself for easy packing</li>
-    <li><span class="feature-icon">^07</span> Water-resistant and lightweight material</li>
-    <li><span class="feature-icon">🎵</span> Perfect for festivals, travel, and everyday use</li>
-    <li><span class="feature-icon">⚙️</span> Durable construction for long-term use</li>
-  </ul>
-
-  <!-- Image Gallery -->
-  <div class="gallery">
-    <h3>Out and About with Packably</h3>
-    <img src="packably_campsite.jpg" alt="Camping with Packably" />
-    <img src="packably_beach.jpg" alt="Beach with Packably" />
-    <img src="packably_festival.jpg" alt="Festival with Packably" />
-    <img src="packably_festival_closeup.jpg" alt="Festival Close-up with Packably" />
+  <!-- Rotating Hero Banner -->
+  <div class="hero">
+    <img src="packably_beach.jpg" class="active" alt="Packably at the beach" />
+    <img src="packably_campsite.jpg" alt="Packably at the campsite" />
+    <img src="packably_festival.jpg" alt="Packably at the festival" />
+    <img src="packably_festival_closeup.jpg" alt="Packably close-up" />
   </div>
 
-  <footer>
-    © 2025 Packably. All rights reserved.
-  </footer>
+  <!-- Main Content -->
+  <div class="content">
+    <h2>Our Flagship Bag</h2>
+    <ul>
+      <li><img src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" class="feature-icon" alt="fold icon"/>Folds into itself for easy packing</li>
+      <li><img src="https://img.icons8.com/ios-filled/50/000000/water.png" class="feature-icon" alt="water icon"/>Water-resistant and lightweight material</li>
+      <li><img src="https://img.icons8.com/ios-filled/50/000000/musical-notes.png" class="feature-icon" alt="music icon"/>Perfect for festivals, travel, and everyday use</li>
+      <li><img src="https://img.icons8.com/ios-filled/50/000000/settings.png" class="feature-icon" alt="gear icon"/>Durable construction for long-term use</li>
+    </ul>
 
+    <footer>
+      © 2025 Packably. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Simple banner rotation
+    const images = document.querySelectorAll(".hero img");
+    let current = 0;
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 3000);
+  </script>
 </body>
 </html>
