@@ -42,13 +42,13 @@
       display: block;
     }
 
-    .content {
+    .section {
       max-width: 640px;
       margin: 0 auto;
       padding: 40px 24px;
     }
 
-    h2 {
+    h2, h3 {
       font-size: 24px;
       margin-top: 0;
       margin-bottom: 16px;
@@ -74,6 +74,12 @@
       margin-right: 12px;
     }
 
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
     footer {
       margin-top: 60px;
       font-size: 14px;
@@ -95,8 +101,17 @@
     <img src="packably_festival_closeup.jpg" alt="Packably close-up" />
   </div>
 
-  <!-- Main Content -->
-  <div class="content">
+  <!-- About Packably -->
+  <div class="section">
+    <h2>About Packably</h2>
+    <p style="font-size: 16px; line-height: 1.6;">
+      Packably creates stylish, lightweight backpacks built for travel, festivals, day trips, and everyday life.
+      Our bags are compact, durable, and fold down neatly when not in use — perfect for those who pack light and move fast.
+    </p>
+  </div>
+
+  <!-- Features -->
+  <div class="section">
     <h2>Our Flagship Bag</h2>
     <ul>
       <li><img src="https://img.icons8.com/ios-filled/50/000000/collapse-arrow.png" class="feature-icon" alt="fold icon"/>Folds into itself for easy packing</li>
@@ -104,11 +119,20 @@
       <li><img src="https://img.icons8.com/ios-filled/50/000000/musical-notes.png" class="feature-icon" alt="music icon"/>Perfect for festivals, travel, and everyday use</li>
       <li><img src="https://img.icons8.com/ios-filled/50/000000/settings.png" class="feature-icon" alt="gear icon"/>Durable construction for long-term use</li>
     </ul>
-
-    <footer>
-      © 2025 Packably. All rights reserved.
-    </footer>
   </div>
+
+  <!-- Lifestyle Gallery -->
+  <div class="section gallery">
+    <h3>Out and About with Packably</h3>
+    <img src="packably_campsite.jpg" alt="Camping with Packably" />
+    <img src="packably_beach.jpg" alt="Beach with Packably" />
+    <img src="packably_festival.jpg" alt="Festival with Packably" />
+    <img src="packably_festival_closeup.jpg" alt="Festival Close-up with Packably" />
+  </div>
+
+  <footer>
+    © 2025 Packably. All rights reserved.
+  </footer>
 
   <script>
     // Simple banner rotation
