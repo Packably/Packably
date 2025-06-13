@@ -9,8 +9,14 @@
       font-family: system-ui, sans-serif;
       background-color: #fefaf5;
       color: #2c2c2c;
+      padding: 24px;
       margin: 0;
-      padding: 0;
+    }
+
+    img.logo {
+      max-width: 240px;
+      display: block;
+      margin: 0 auto 24px;
     }
 
     .sticky-logo {
@@ -22,20 +28,18 @@
       z-index: 1000;
     }
 
-    .content {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 200px 24px 40px;
-    }
-
     h2 {
-      font-size: 26px;
+      font-size: 24px;
+      margin-top: 40px;
       margin-bottom: 16px;
+      text-align: center;
     }
 
     ul {
-      list-style: none;
       padding: 0;
+      list-style: none;
+      max-width: 600px;
+      margin: 0 auto 40px;
     }
 
     li {
@@ -45,6 +49,24 @@
 
     .feature-icon {
       margin-right: 10px;
+    }
+
+    .gallery {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .gallery h3 {
+      font-size: 22px;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 24px;
     }
 
     footer {
@@ -60,20 +82,27 @@
   <!-- Sticky Badge Logo Centered -->
   <img src="packably-sticky-badge.png" alt="Packably Badge Logo" class="sticky-logo" />
 
-  <!-- Main Content -->
-  <div class="content">
-    <h2>Our Flagship Bag</h2>
-    <ul>
-      <li><span class="feature-icon">🛠</span> Folds into itself for easy packing</li>
-      <li><span class="feature-icon">^07</span> Water-resistant and lightweight material</li>
-      <li><span class="feature-icon">🎵</span> Perfect for festivals, travel, and everyday use</li>
-      <li><span class="feature-icon">⚙️</span> Durable construction for long-term use</li>
-    </ul>
+  <!-- Feature Section -->
+  <h2>Our Flagship Bag</h2>
+  <ul>
+    <li><span class="feature-icon">🛠</span> Folds into itself for easy packing</li>
+    <li><span class="feature-icon">^07</span> Water-resistant and lightweight material</li>
+    <li><span class="feature-icon">🎵</span> Perfect for festivals, travel, and everyday use</li>
+    <li><span class="feature-icon">⚙️</span> Durable construction for long-term use</li>
+  </ul>
 
-    <footer>
-      © 2025 Packably. All rights reserved.
-    </footer>
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <h3>Out and About with Packably</h3>
+    <img src="packably_campsite.jpg" alt="Camping with Packably" />
+    <img src="packably_beach.jpg" alt="Beach with Packably" />
+    <img src="packably_festival.jpg" alt="Festival with Packably" />
+    <img src="packably_festival_closeup.jpg" alt="Festival Close-up with Packably" />
   </div>
+
+  <footer>
+    © 2025 Packably. All rights reserved.
+  </footer>
 
 </body>
 </html>
